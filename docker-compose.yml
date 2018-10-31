@@ -1,16 +1,19 @@
 version: "3"
 services:
   exercise3:
+    env_file:
+      - .env
     build: .
+    image: exercise1
     ports:
-     - "9003:9003"
+      - "${SERVICE_PORT}:${SERVICE_PORT}"
   messageapp:
-    image: cabify/backend-bootcamp-messageapp
+    image: "cabify/backend-bootcamp-messageapp:latest"
     ports:
-      - "3000:3000"
+      - "${MESSAGEAPP_PORT}:${MESSAGEAPP_PORT}"
   mongodb:
     image: mongo
     volumes:
       - ./data/db:/data/db
     ports:
-      - 27017:27017
+      - "${MONGODB_PORT}:${MONGODB_PORT}"
