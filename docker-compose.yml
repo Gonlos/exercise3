@@ -10,7 +10,7 @@ services:
   messageapp:
     image: "cabify/backend-bootcamp-messageapp:latest"
     ports:
-      - "${MESSAGEAPP_PORT}:${MESSAGEAPP_PORT}"
+      - "${MESSAGEAPP_PORT}:9001"
   doc:
     image: swaggerapi/swagger-ui
     environment:
