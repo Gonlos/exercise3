@@ -2,7 +2,7 @@
 
 ## Methods
 
-### send(destination,message) -> {ok,data}
+### send(destination,message) -> {ok,message}
 destination -> String, max 50 char
 
 message -> String, max 200 char
