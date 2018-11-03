@@ -16,14 +16,14 @@ services:
     environment:
       - SWAGGER_JSON=/foo/swagger.json
     volumes:
-      - ./mongodb/data/db:/data/db
+      - ./data/db:/data/db
     ports:
       - "${MONGODB_PORT}:27017"
   doc:
     image: swaggerapi/swagger-ui
     environment:
-      - SWAGGER_JSON=/swagger.yml
+      - SWAGGER_JSON=/doc/swagger.yml
     volumes:
-      - ./doc/swagger.yml:/swagger.yml
+      - .messageAppService/doc:/doc
     ports:
       - "${DOC_PORT}:8080"
