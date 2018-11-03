@@ -10,7 +10,7 @@ services:
   messageapp:
     image: "cabify/backend-bootcamp-messageapp:latest"
     ports:
-      - "${MESSAGEAPP_PORT}:9001"
+      - "${MESSAGE_APP_PORT}:9001"
   mongodb:
     image: mongo
     environment:
@@ -18,7 +18,7 @@ services:
     volumes:
       - ./data/db:/data/db
     ports:
-      - "${MONGODB_PORT}:27017"
+      - "${DATABASE_PORT}:27017"
   doc:
     image: swaggerapi/swagger-ui
     environment:
